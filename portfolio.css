@@ -1,0 +1,336 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+
+    --blanc: #fcfcfc;
+    --kaki: #606c38;
+    --kaki-clair: #a3b18a;
+    --texte: #283618;
+    --gris-fond: #f4f4f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Une seule police partout */
+}
+
+body { 
+    background-color: var(--blanc); 
+    color: var(--texte); 
+    line-height: 1.7; 
+}
+
+/* --- Navigation Minimaliste --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    background: white;
+}
+
+nav .logo { 
+    font-weight: 700; 
+    letter-spacing: -1px; 
+    font-size: 1.2rem; 
+    color: var(--kaki); 
+    text-transform: uppercase;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+
+nav ul li a { 
+    text-decoration: none; 
+    color: var(--texte); 
+    font-weight: 400; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--kaki-clair); }
+
+/* --- Header Impactant --- */
+header {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris-fond);
+    text-align: center;
+}
+
+header h1 { 
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    color: var(--kaki); 
+    margin-bottom: 15px;
+    letter-spacing: -2px;
+}
+
+header p { 
+    font-size: 1rem; 
+    font-weight: 300; 
+    color: #666;
+    max-width: 500px;
+}
+
+/* --- Sections --- */
+section { padding: 100px 10%; }
+
+section h2 { 
+    font-size: 1.8rem; 
+    text-align: center; 
+    margin-bottom: 60px; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    
+}
+
+
+/* --- Cartes de Compétences / Projets --- */
+.skills-grid, .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.skill-card, .card {
+    background: white;
+    padding: 40px;
+    border-radius: 0; /* Carré pour un look plus "galerie d'art" */
+    border: 1px solid #eee;
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    border-color: var(--kaki);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Badges Logiciels --- */
+.software-tags span {
+    background: #f9f9f9;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--kaki);
+    border: 1px solid #eee;
+}
+
+/* --- Bouton épuré --- */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--kaki);
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background: var(--texte);
+    letter-spacing: 4px; /* Petit effet sympa au survol */
+}
+
+/* --- Style des Cartes Projets --- */
+
+/* --- GRILLE ET CARTES --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Ombre légère de base */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animation fluide */
+    cursor: pointer;
+    text-align: left;
+}
+
+/* --- L'EFFET AU SURVOL (HOVER) --- */
+.card:hover {
+    transform: translateY(-12px); /* La carte s'élève */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12); /* L'ombre devient profonde */
+    border-color: var(--kaki-clair);
+}
+
+.card-img {
+    height: 250px;
+    background-color: var(--kaki-clair); /* Couleur de secours */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+
+/* --- CONTENU DE LA CARTE --- */
+.card-content {
+    padding: 30px;
+}
+
+.card-content .category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--kaki);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--texte);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+.project-link:hover {
+    color: var(--kaki);
+    padding-left: 10px;
+}
+
+/* --- Style de la zone CV --- */
+#cv-section {
+    background-color: var(--gris-fond);
+    text-align: center;
+}
+
+.cv-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cv-box p {
+    margin-bottom: 20px;
+}
+
+/* --- LE FOND SOMBRE (Cache le reste du site) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(40, 54, 24, 0.9); /* Ton Vert Kaki très sombre et transparent */
+    z-index: 1000;
+    
+    /* Caché par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    
+    /* Centrer la carte au milieu de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- QUAND ON CLIQUE SUR DÉCOUVRIR --- */
+.modal-overlay:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- LA CARTE DÉTAILLÉE (Celle qui s'affiche) --- */
+.modal-card {
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    
+    /* Petite animation d'entrée (zoom) */
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    max-height: 90vh; /* Pour scroller si l'écran est petit */
+    overflow-y: auto;
+}
+
+.modal-overlay:target .modal-card {
+    transform: scale(1); /* Revient à la taille normale */
+}
+
+/* --- DÉTAILS DE STYLE --- */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--kaki);
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    color: var(--texte);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-body p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    /* Cela crée autant de colonnes que possible. Sur un PC, ça en mettra 3. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Espace entre les cartes */
+    margin-top: 40px;
+}
+
+/* Petit ajustement pour que les images soient belles */
+.card-img {
+    height: 220px; /* Hauteur fixe pour que tout soit aligné */
+}
